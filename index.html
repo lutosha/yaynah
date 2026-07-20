@@ -5,11 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Калькулятор калорий</title>
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    })();
+  </script>
 </head>
 <body>
   <main class="card">
-    <h1>Калькулятор калорий</h1>
-    <p class="subtitle">Узнайте свою суточную норму калорий</p>
+    <div class="card-header">
+      <div>
+        <h1>Калькулятор калорий</h1>
+        <p class="subtitle">Узнайте свою суточную норму калорий</p>
+      </div>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
+        <span class="theme-icon theme-icon-sun">☀️</span>
+        <span class="theme-icon theme-icon-moon">🌙</span>
+      </button>
+    </div>
 
     <form id="calc-form">
       <div class="field">
